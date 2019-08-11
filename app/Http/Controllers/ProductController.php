@@ -106,11 +106,13 @@ class ProductController extends Controller
 
     	//redirect
     	return redirect('/products');
+	}
 
+	public function show($id) {
 
-
-
-
-    }
+		//return $id;
+		$product = Product::find($id);
+		return view('admin.products.details', compact('product'));
+	}
 
 }

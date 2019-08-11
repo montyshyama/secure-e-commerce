@@ -12,5 +12,12 @@
 */
 
 Route::get('/', 'DashboardController@index');
+
+//Product
 Route::resource('/products', 'ProductController');
 Route::post('/store', 'ProductController@store');
+
+//Order
+Route::resource('/orders', 'OrderController');
+
+

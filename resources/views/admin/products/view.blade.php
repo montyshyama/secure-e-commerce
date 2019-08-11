@@ -14,7 +14,7 @@
 
                 <div class="header">
                     <h4 class="title">All Products</h4>
-                    <p class="category">List of all stock</p>
+                    <p class="category"></p>
                 </div>
                 <div class="content table-responsive table-full-width">
                     <table class="table table-striped">
@@ -44,13 +44,14 @@
                             {{ Form::open(['route' => ['products.destroy', $product->id], 'method'=>'DELETE']) }}
                                 
                                 {{ Form::button('<span class="fa fa-trash"></span>', ['type'=>'submit','class'=>'btn btn-danger btn-sm','onclick'=>'return confirm("Are you sure you want to delete this?")'])  }}
-                                
-                                {{ link_to_route('products.edit','', $product->id, ['class' => 'btn btn-info btn-sm ti-pencil']) }}
-                               	
-                               	{{link_to_route('products.show','', $product->id, ['class' => 'btn btn-primary btn-sm ti-list']) }}
-                               	
-                            {{ Form::close() }}
+                            
+                            
 
+                            {{ link_to_route('products.edit','', $product->id, ['class' => 'btn btn-info btn-sm ti-pencil']) }}
+                           	
+                           	{{link_to_route('products.show','', $product->id, ['class' => 'btn btn-primary btn-sm ti-list']) }}
+                               	{{ Form::close() }}
+                           
                         </td>
 						
 						</tr>
