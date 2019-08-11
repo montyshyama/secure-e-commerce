@@ -27,7 +27,7 @@
 				-->
 					
                 <div class="content">
-                    {!! Form::open(['url' => 'store', 'files' => 'true']) !!}
+                    {!! Form::open(['url' => '/store', 'files' => 'true']) !!}
                         <div class="row">
                             <div class="col-md-12">
                               	@include('admin.products._fields')

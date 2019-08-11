@@ -12,5 +12,5 @@
 */
 
 Route::get('/', 'DashboardController@index');
-Route::get('/add', 'ProductController@create');
+Route::resource('/products', 'ProductController');
 Route::post('/store', 'ProductController@store');
