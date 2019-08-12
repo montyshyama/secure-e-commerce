@@ -10,10 +10,11 @@
 <div class="row">
 
     <div class="col-md-12">
+        
         <div class="card">
             <div class="header">
                 <h4 class="title">Order Details</h4>
-                <p class="category">Order details</p>
+                <p class="category"></p>
             </div>
             <div class="content table-responsive table-full-width">
                 <table class="table table-striped">
@@ -21,6 +22,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Date</th>
+                        <th>Quantity</th>
                         <th>Address</th>
                         <th>Status</th>
                         <th>Action</th>
@@ -30,6 +32,11 @@
                         <tr>
                             <td>{{ $order->id }}</td>
                             <td>{{ $order->date }}</td>
+                            
+                            <td>
+                                {{ $order->orderItems[0]->quantity }}
+                            </td>
+
                             <td>{{ $order->address }}</td>
                             <td>
                                 @if ($order->status)
@@ -54,7 +61,7 @@
         <div class="card">
             <div class="header">
                 <h4 class="title">User Details</h4>
-                <p class="category">User Details</p>
+                <p class="category"></p>
             </div>
             <div class="content table-responsive table-full-width">
                 <table class="table table-striped">
@@ -71,17 +78,13 @@
                         <th>Email</th>
                         <td>{{ $order->user->email }}</td>
                     </tr>
-                    <tr>
-                        <th>Registered At</th>
-                        <td>{{ $order->user->created_at->diffForHumans() }}</td>
-                    </tr>
-
+                    
                     </thead>
                 </table>
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="card">
             <div class="header">
                 <h4 class="title">Product Details</h4>
@@ -93,7 +96,7 @@
                         <th>Order ID</th>
                         <th>Product Name</th>
                         <th>Price</th>
-                        <th>Quantity</th>
+                        
                         <th>Image</th>
                     </tr>
                     <tr>
@@ -117,15 +120,7 @@
                                 </table>
                             @endforeach
                         </td>
-                        <td>
-                            @foreach ($order->orderItems as $item)
-                                <table class="table">
-                                    <tr>
-                                        <td>{{ $item->quantity }}</td>
-                                    </tr>
-                                </table>
-                            @endforeach
-                        </td>
+                        
                         <td>
                             @foreach ($order->products as $product)
                                 <table class="table">
@@ -144,6 +139,6 @@
     </div>
 </div>
 
-    <a href="{{ url('/admin/orders') }}" class="btn btn-success">Back to Orders</a>
+    <a href="{{ url('/orders') }}" class="btn btn-success">Back to Orders</a>
     
 @endsection

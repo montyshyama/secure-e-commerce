@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-	//defining relationships
+	protected $guarded = [];
+    //defining relationships
     public function user() {
 
     	return $this->belongsTo(User::class);

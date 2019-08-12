@@ -40,17 +40,17 @@
                                             <td>{{ $item->name }}</td>
                                         </tr>
                                     </table>
-                                    @endforeach
+                                @endforeach
                                 </td>
 
                                 <td>
-                                    @foreach ($order->orderItems as $item)
-                                        <table class="table">
-                                            <tr>
-                                                <td>{{ $item->quantity }}</td>
-                                            </tr>
-                                        </table>
-                                    @endforeach
+                                @foreach ($order->orderItems as $item)
+                                    <table class="table">
+                                        <tr>
+                                            <td>{{ $item->quantity }}</td>
+                                        </tr>
+                                    </table>
+                                @endforeach
                                 </td>
 
                                 <td>
@@ -59,6 +59,17 @@
                                     @else
                                         <span class="label label-warning">Pending</span>
                                     @endif
+                                </td>
+
+                                <td>
+                                @if($order->status)
+                                	{{ link_to_route('order.pending', 'Pending', $order->id, ['class' => 'btn btn-warning btn-sm']) }}
+                               
+                                @else
+                                	{{ link_to_route('order.confirm', 'Confirm', $order->id, ['class' => 'btn btn-success btn-sm']) }}
+                                @endif
+
+                                {{ link_to_route('orders.show', 'Details', $order->id, ['class' => 'btn btn-success btn-sm']) }}
                                 </td>
 
                             
