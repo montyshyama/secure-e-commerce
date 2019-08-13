@@ -22,7 +22,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Registered at</th>
-                            <th>Actions</th>
+                            
                         </tr>
                         </thead>
                         <tbody>
@@ -32,13 +32,13 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->created_at }}</td>
-                            <td><span class="label label-success">Active</label></td>
+                            
                             <td>
+                                {{link_to_route( 'users.show', 'Details', $user->id, ['class' => 'btn btn-success btn-sm'] )}}
+                                
+                            </td>
                                 
 
-                                <button class="btn btn-sm btn-primary ti-view-list-alt"
-                                        title="Details"></button>
-                            </td>
                         </tr>
                         @endforeach
                         </tbody>

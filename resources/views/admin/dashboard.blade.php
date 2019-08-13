@@ -19,7 +19,7 @@
                                     <div class="col-xs-7">
                                         <div class="numbers">
                                             <p>Total Visitors</p>
-                                            11022
+                                            11
                                         </div>
                                     </div>
                                 </div>
@@ -44,14 +44,14 @@
                                     <div class="col-xs-7">
                                         <div class="numbers">
                                             <p>Products</p>
-                                            ₹1,337
+                                            {{ $product->count() }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-panel"></i> Details
+                                        <a href="/products"><i class="ti-panel"></i> Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -69,14 +69,14 @@
                                     <div class="col-xs-7">
                                         <div class="numbers">
                                             <p>Orders</p>
-                                            23
+                                            {{ $order->count() }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-panel"></i> Details
+                                        <a href="/orders"><i class="ti-panel"></i> Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -94,14 +94,14 @@
                                     <div class="col-xs-7">
                                         <div class="numbers">
                                             <p>Users</p>
-                                            45
+                                            {{ $user->count() }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <i class="ti-panel"></i> Details
+                                        <a href="/users"><i class="ti-panel"></i> Details</a>
                                     </div>
                                 </div>
                             </div>

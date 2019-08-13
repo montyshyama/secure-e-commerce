@@ -1,4 +1,6 @@
-<div class="sidebar" data-background-color="white" data-active-color="danger">
+
+<div class="sidebar navbar navbar-expand-lg" data-background-color="white" data-active-color="danger">
+    
 
         <div class="sidebar-wrapper">
             <div class="logo">
@@ -40,4 +42,5 @@
                 </li>
             </ul>
         </div>
+  
     </div>
