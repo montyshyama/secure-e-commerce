@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -77,6 +82,13 @@ return [
         // ],
     ],
 
+    'providers' => [
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\AdminUser::class,
+        ],
+
+
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
@@ -100,4 +112,4 @@ return [
         ],
     ],
 
-];
+]];

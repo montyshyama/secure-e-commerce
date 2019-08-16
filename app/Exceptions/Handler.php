@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use function Couchbase\defaultDecoder;
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -48,4 +50,24 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $exception);
     }
+
+
+    public function unauthenticated($request, 
+        AuthenticationException $exception)
+    {
+
+        $guard = array_get($exception->guards(), 0);
+
+        switch ($guard) {
+            case 'admin':
+                return redirect('/adminLogin');
+            break;
+
+            default:
+                return redirect('/userLogin');
+                break;
+
+        }
+    }
+
 }

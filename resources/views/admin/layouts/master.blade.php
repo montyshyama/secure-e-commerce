@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/index.jpeg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
     <title>Secure E-commerce</title>
@@ -43,12 +43,12 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="ti-settings"></i>
-                                <p>Account</p>
+                                <p>{{ auth()->guard('admin')->check() ? auth()->guard()->user()->name: 'Account' }}</p>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Profile</a></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="/adminLogout">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -83,7 +83,7 @@
                 <div class="copyright pull-right">
                     &copy;
                     <script>document.write(new Date().getFullYear())</script>
-                     <a href=""> montyshyama</a>
+                     <a href="https://linkedin.com/in/montyshyama"> montyshyama</a>
                 </div>
             </div>
         </footer>
