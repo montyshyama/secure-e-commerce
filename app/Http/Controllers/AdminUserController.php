@@ -32,7 +32,7 @@ class AdminUserController extends Controller
 			]);
 		}
 		session()->flash('msg', 'You have been logged in successfully');
-		return redirect('/');
+		return redirect('/admin');
 
 
 	}
@@ -41,7 +41,7 @@ class AdminUserController extends Controller
 
 		auth()->guard('admin')->logout();
 		session()->flash('msg', 'You have been logged out');
-		return redirect('/adminLogin');
+		return redirect('/admin/login');
 	}
 
 }

@@ -60,7 +60,7 @@
 
                         @endif
 
-                        <form action="/adminLogin" method="post">
+                        <form action="/admin/login" method="post">
                             @csrf
 
                             <div class="form-group">

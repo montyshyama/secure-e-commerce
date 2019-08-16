@@ -7,7 +7,14 @@
 
 @section('content')
   <div class="row">
+     @if(session()->has('msg'))
+                            <div class="alert alert-success">
+                                {{ session()->get('msg') }}
+                            </div>
+
+                        @endif
                     <div class="col-lg-3 col-sm-6">
+
                         <div class="card">
                             <div class="content">
                                 <div class="row">
@@ -51,7 +58,7 @@
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <a href="/products"><i class="ti-panel"></i> Details</a>
+                                        <a href="/admin/products"><i class="ti-panel"></i> Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +83,7 @@
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <a href="/orders"><i class="ti-panel"></i> Details</a>
+                                        <a href="/admin/orders"><i class="ti-panel"></i> Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +108,7 @@
                                 <div class="footer">
                                     <hr/>
                                     <div class="stats">
-                                        <a href="/users"><i class="ti-panel"></i> Details</a>
+                                        <a href="/admin/users"><i class="ti-panel"></i> Details</a>
                                     </div>
                                 </div>
                             </div>
