@@ -39,6 +39,11 @@ Route::prefix('admin')->group(function() {
 		
 });
 
+//Front
+Route::get('/', 'HomeController@index');
+Route::get('/users/register', 'RegistrationController@index');
+
+
 
 
 
