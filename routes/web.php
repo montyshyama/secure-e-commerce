@@ -41,7 +41,14 @@ Route::prefix('admin')->group(function() {
 
 //Front
 Route::get('/', 'HomeController@index');
-Route::get('/users/register', 'RegistrationController@index');
+Route::get('/user/register', 'RegistrationController@index');
+Route::post('/user/register', 'RegistrationController@store');
+Route::get('/user/profile', function() {
+	return "Welcome -user!";
+});
+
+Route::get('/user/login', 'SessionsController@index');
+Route::post('/user/login', 'SessionsController@store');
 
 
 

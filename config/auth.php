@@ -51,6 +51,12 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'frontusers',
+        ],
+
     ],
 
     /*
@@ -75,18 +81,17 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
-    ],
-
-    'providers' => [
+    
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\AdminUser::class,
         ],
+
+        'frontusers' => [
+            'driver' => 'eloquent',
+            'model' => App\User::class,
+        ],
+    ],
 
 
     /*
@@ -112,4 +117,4 @@ return [
         ],
     ],
 
-]];
+];

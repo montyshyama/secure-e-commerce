@@ -11,7 +11,21 @@
                 <div class="card-body">
                     <h2 class="card-title">Sign Up</h2>
                     <hr>
-                    <form action="">
+
+                    @if($errors->any())
+                    	<div class="alert alert-danger">
+                    		<ul>
+                    			@foreach($errors->all() as $error)
+                    				<li>{{ $error }}</li>
+                    			@endforeach
+
+                    		</ul>
+                    	</div>
+
+                    @endif
+
+                    <form action="/user/register", method="post">
+                    	@csrf
 
                         <div class="form-group">
                             <label for="name">Name:</label>
@@ -34,13 +48,13 @@
                         </div>
 
                          <div class="form-group">
-                            <label for="address">Phone No:</label>
+                            <label for="phone">Phone No:</label>
                             <input type="text" name="phone" placeholder="Phone No" id="phone" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address:</label>
-                            <input type="text" name="address" placeholder="Address" id="address" class="form-control">
+                            <textarea name="address" placeholder="Address" id="address" class="form-control"></textarea>
                         </div>
 
                         <div class="form-group">

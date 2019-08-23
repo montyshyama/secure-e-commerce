@@ -78,6 +78,15 @@
                         <th>Email</th>
                         <td>{{ $order->user->email }}</td>
                     </tr>
+                    <tr>
+                        <th>Phone No</th>
+                        <td>{{ $order->user->phone }}</td>
+
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>{{ $order->user->address }}</td>
+                    </tr>
                     
                     </thead>
                 </table>
