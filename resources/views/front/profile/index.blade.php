@@ -78,7 +78,7 @@
                         @foreach ($order->orderItems as $item)
                             <table class="table">
                                 <tr>
-                                    <td>${{ $item->price }}</td>
+                                    <td>₹{{ $item->price }}</td>
                                 </tr>
                             </table>
                         @endforeach

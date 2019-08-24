@@ -52,6 +52,20 @@ Route::get('/user/login', 'SessionsController@index');
 Route::post('/user/login', 'SessionsController@store');
 Route::get('/user/logout', 'SessionsController@logout');
 
+//Cart
+Route::get('/cart', 'CartController@index');
+Route::post('/cart', 'CartController@store')->name('cart');
+Route::delete('/cart/remove/{product}', 'CartController@destroy')->name('cart.destroy');
+Route::post('/cart/savelater/{product}', 'CartController@saveLater')->name('cart.saveLater');
+
+
+Route::get('/empty', function() {
+	Cart::instance('default')->destroy();
+
+});
+
+
+
 
 
 

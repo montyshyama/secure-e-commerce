@@ -18,6 +18,9 @@
     <link href="{{ url('assets/css/heroic-features.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
+
+
 </head>
 
 <body>
@@ -34,7 +37,6 @@
 
 </div>
 <!-- /.container -->
-
 
 
 <!-- Bootstrap core JavaScript -->
