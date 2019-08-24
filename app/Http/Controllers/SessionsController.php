@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionsController extends Controller
 {
+	public function __construct() {
+
+		$this->middleware('guest:user')->except('logout');
+	}
+
     public function index() {
     	return view('front.sessions.index');
 	}
@@ -29,5 +34,12 @@ class SessionsController extends Controller
 			]);
 		}//endif
 		return redirect('/user/profile');
+	}
+
+	public function logout() {
+
+		auth()->guard('user')->logout();
+		session()->flash('msg', 'You have been successfully logged out!');
+		return redirect('/user/login');
 	}
 }

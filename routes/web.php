@@ -43,12 +43,16 @@ Route::prefix('admin')->group(function() {
 Route::get('/', 'HomeController@index');
 Route::get('/user/register', 'RegistrationController@index');
 Route::post('/user/register', 'RegistrationController@store');
-Route::get('/user/profile', function() {
-	return "Welcome -user!";
-});
+//User profile
+Route::get('/user/profile', 'UserProfileController@index');
+Route::get('/user/order/{id}', 'UserProfileController@show');
+
 
 Route::get('/user/login', 'SessionsController@index');
 Route::post('/user/login', 'SessionsController@store');
+Route::get('/user/logout', 'SessionsController@logout');
+
+
 
 
 

@@ -62,6 +62,12 @@
 
                         <form action="/admin/login" method="post">
                             @csrf
+                            @if(session()->has('msg'))
+                            <div class="alert alert-success">
+                                {{ session()->get('msg') }}
+                            </div>
+
+                            @endif
 
                             <div class="form-group">
                                 <label for="email">Email:</label>
