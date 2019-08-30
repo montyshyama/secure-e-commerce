@@ -66,7 +66,7 @@
                                     </select>
                                 </td>
 
-                                <td>${{ $item->total() }}</td>
+                                <td>₹{{ $item->total() }}</td>
                             </tr>
                         @endforeach
 
@@ -87,15 +87,15 @@
                             </thead>
                             <tr>
                                 <td>Subtotal</td>
-                                <td>${{ Cart::subtotal() }}</td>
+                                <td>₹{{ Cart::subtotal() }}</td>
                             </tr>
                             <tr>
                                 <td>Tax</td>
-                                <td>${{ Cart::tax() }}</td>
+                                <td>₹{{ Cart::tax() }}</td>
                             </tr>
                             <tr>
                                 <th>Total</th>
-                                <th>${{ Cart::total() }}</th>
+                                <th>₹{{ Cart::total() }}</th>
                             </tr>
                         </table>
                     </div>
@@ -107,7 +107,7 @@
                     <hr>
                 </div>
                 @else
-                    <div class="alert alert-warning"><strong>There is not item in your Cart</strong></div>
+                    <div class="alert alert-warning"><strong>There is no item in your Cart</strong></div>
                     <a href="/" class="btn btn-outline-dark">Continue Shopping</a>
                     <hr>
                 @endif
@@ -157,7 +157,7 @@
                                         </select>
                                     </td>
 
-                                    <td>${{ $item->total() }}</td>
+                                    <td>₹{{ $item->total() }}</td>
                                 </tr>
 
                             @endforeach

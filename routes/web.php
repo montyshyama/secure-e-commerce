@@ -56,6 +56,7 @@ Route::get('/user/logout', 'SessionsController@logout');
 Route::get('/cart', 'CartController@index');
 Route::post('/cart', 'CartController@store')->name('cart');
 Route::delete('/cart/remove/{product}', 'CartController@destroy')->name('cart.destroy');
+Route::patch('/cart/update/{product}', 'CartController@update')->name('cart.update');
 Route::post('/cart/savelater/{product}', 'CartController@saveLater')->name('cart.saveLater');
 
 //Save for later
@@ -68,6 +69,10 @@ Route::get('/empty', function() {
 	Cart::instance('default')->destroy();
 
 });
+
+//Checkout
+Route::get('/checkout', 'CheckoutController@index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout');
 
 
 
